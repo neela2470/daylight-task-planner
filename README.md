@@ -34,3 +34,7 @@ The starter tasks are sample content for the first visit. Removing or editing th
 ## License
 
 This project is available under the MIT License. See [LICENSE](LICENSE).
+
+## Team Git Workflow
+
+Develop each task on a feature branch created from `main`. Commit changes with clear messages, push the branch to GitHub, and ask a teammate to review it before merging.
