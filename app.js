@@ -147,7 +147,15 @@ function init() {
   const formatted = new Intl.DateTimeFormat(undefined, { weekday: 'long', month: 'long', day: 'numeric' }).format(today);
   $('#header-date').textContent = formatted;
   $('#greeting-date').textContent = new Intl.DateTimeFormat(undefined, { weekday: 'long', month: 'long', day: 'numeric' }).format(today).toUpperCase();
-  $('#week-day').textContent = ['Sunday', 'Saturday'].includes(new Intl.DateTimeFormat(undefined, { weekday: 'long' }).format(today)) ? 'A softer kind of day' : 'A good day to begin';
+   const hour = new Date().getHours();
+
+if (hour < 12) {
+  $('#week-day').textContent = 'Good morning 🌅';
+} else if (hour < 17) {
+  $('#week-day').textContent = 'Good afternoon ☀️';
+} else {
+  $('#week-day').textContent = 'Good evening 🌙';
+}
   render();
 
   $$('.nav-item').forEach((button) => button.addEventListener('click', () => { currentFilter = button.dataset.filter; render(); }));
